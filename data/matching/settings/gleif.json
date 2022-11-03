@@ -1,0 +1,58 @@
+{
+  "file_processing": {
+    "file_path": "../../data/cleaned/gleif_cleaned.csv",
+    "file_extension_pattern": "*.csv",
+    "filename_pattern": "gleif",
+    "encoding": "utf-8",
+    "separator": ",",
+    "read_mode": "bulk-pd"
+  },
+  "data_source": {
+    "name": "gleif",
+    "table_name": "esg_gleif",
+    "create_table": "True",
+    "if_table_exists": "drop",
+    "primary_keys": ["lei"],
+    "attributes": {
+      "lei":  ["lei","str"],
+      "legal_name":  ["legal_name", "str"],
+      "legal_country_alpha2":  ["legal_country_alpha2", "str"],
+      "headquarter_country_alpha2":  ["headquarter_country_alpha2", "str"],
+      "name_legal_clean":  ["name_legal_clean", "str"],
+      "name_headq_clean":  ["name_headq_clean", "str"],
+      "name1_legal_clean":  ["name1_legal_clean", "str"],
+      "name1_headq_clean":  ["name1_headq_clean", "str"],
+      "name2_legal_clean":  ["name2_legal_clean", "str"],
+      "name2_headq_clean":  ["name2_headq_clean", "str"],
+      "name3_legal_clean":  ["name3_legal_clean", "str"],
+      "name3_headq_clean":  ["name3_headq_clean", "str"],
+      "name4_legal_clean":  ["name4_legal_clean", "str"],
+      "name4_headq_clean":  ["name4_headq_clean", "str"],
+      "name5_legal_clean":  ["name5_legal_clean", "str"],
+      "name5_headq_clean":  ["name5_headq_clean", "str"]
+    },
+    "matching_role": "referential",
+    "matching_alias": {
+      "LEI":  "lei",
+      "COMPANY": "name_legal_clean",
+      "COUNTRY": "legal_country_alpha2",
+      "COUNTRY_HQ": "headquarter_country_alpha2",
+      "COMPANY_OTHER_NAME1": "name1_legal_clean",
+      "COMPANY_OTHER_NAME2": "name2_legal_clean",
+      "COMPANY_OTHER_NAME3": "name3_legal_clean",
+      "COMPANY_OTHER_NAME4": "name4_legal_clean",
+      "COMPANY_OTHER_NAME5": "name5_legal_clean",
+      "COMPANY_HQ_OTHER_NAME1": "name1_headq_clean",
+      "COMPANY_HQ_OTHER_NAME2": "name2_headq_clean",
+      "COMPANY_HQ_OTHER_NAME3": "name3_headq_clean",
+      "COMPANY_HQ_OTHER_NAME4": "name4_headq_clean",
+      "COMPANY_HQ_OTHER_NAME5": "name5_headq_clean"
+    },
+    "map_to_matching": {
+      "ref_id":  "lei",
+      "ref_company":  "name_legal_clean",
+      "ref_original_company":  "legal_name",
+      "ref_country":  "legal_country_alpha2"
+    }
+  }
+}
