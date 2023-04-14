@@ -1,12 +1,13 @@
 {
   "file_processing": {
-    "file_path": "../../data/cleaned/corpwatch_cleaned.csv",
+    "file_path": "../../../dataset/cleaned/corpwatch_cleaned.csv",
     "file_extension_pattern": "*.csv",
     "filename_pattern": "corpwatch_cleaned",
     "encoding": "utf-8",
     "separator": ",",
     "read_mode": "bulk-pd"
   },
+
   "data_source": {
     "name": "corpwatch",
     "table_name": "esg_corpwatch",
@@ -14,65 +15,37 @@
     "if_table_exists": "drop",
     "primary_keys": ["company_id"],
     "attributes": {
-      "company_id":  ["company_id","int"],
-      "cw_id":  ["cw_id","int"],
-      "cik":  ["cik", "int"],
-      "company_name":  ["company_name", "str"],
-      "company_name_lei":  ["company_name_lei", "str"],
-      "city":  ["city", "str"],
+      "company_id": ["company_id", "int"],
+      "cw_id": ["cw_id", "int"],
+      "cik": ["cik", "int"],
+      "company_name": ["company_name", "str"],
+      "company_name_lei": ["company_name_lei", "str"],
+      "city": ["city", "str"],
       "country_code_short_name": ["country_code_short_name", "str"],
       "country_code_alpha2": ["country_code_alpha2", "str"],
-      "lei_cleaned_id": ["lei_cleaned_id", "str"],
+      "lei_cleaned_id": ["lei", "str"],
       "company_name_clean": ["company_name_clean", "str"],
       "company_name_lei_clean": ["company_name_lei_clean", "str"]
     },
-    "matching_role": "target",
+
+    "matching_role": "referential",
     "matching_alias": {
-      "LEI":  "lei_cleaned_id",
+      "LEI": "lei",
+      "ISIN": "lei",
       "COMPANY": "company_name_clean",
       "COUNTRY": "country_code_alpha2",
       "COUNTRY_HQ": "country_code_alpha2",
       "COMPANY_OTHER_NAME1": "company_name_clean",
       "COMPANY_OTHER_NAME2": "company_name_clean",
-      "COMPANY_OTHER_NAME3": "company_name_clean",
-      "COMPANY_OTHER_NAME4": "company_name_clean",
-      "COMPANY_OTHER_NAME5": "company_name_clean",
       "COMPANY_HQ_OTHER_NAME1": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME2": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME3": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME4": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME5": "company_name_clean"
+      "COMPANY_HQ_OTHER_NAME2": "company_name_clean"
     },
+
     "map_to_matching": {
-      "tgt_id":  "company_id",
-      "lei":  "lei_cleaned_id",
-      "tgt_company": "company_name_clean",
-      "tgt_original_company": "company_name",
-      "tgt_country": "country_code_alpha2"
-    }
-  },
-  "matching_policy": {
-    "matching_with_ref": {
-      "dfm": {
-        "lei":  ["LEI"]
-      } ,
-      "drm": {
-        "name+country":  ["COMPANY", "COUNTRY"],
-        "other_name+country":  ["COMPANY_OTHER_NAME1", "COUNTRY"],
-        "other_name+country":  ["COMPANY_OTHER_NAME2", "COUNTRY"],
-        "other_name+country":  ["COMPANY_OTHER_NAME3", "COUNTRY"],
-        "other_name+country":  ["COMPANY_OTHER_NAME4", "COUNTRY"],
-        "other_name+country":  ["COMPANY_OTHER_NAME5", "COUNTRY"],
-        "other_name_hq+country":  ["COMPANY_HQ_OTHER_NAME1", "COUNTRY_HQ"],
-        "other_name_hq+country":  ["COMPANY_HQ_OTHER_NAME2", "COUNTRY_HQ"],
-        "other_name_hq+country":  ["COMPANY_HQ_OTHER_NAME3", "COUNTRY_HQ"],
-        "other_name_hq+country":  ["COMPANY_HQ_OTHER_NAME4", "COUNTRY_HQ"],
-        "other_name_hq+country":  ["COMPANY_HQ_OTHER_NAME5", "COUNTRY_HQ"]
-      },
-      "irm": {
-        "lei":  ["LEI"],
-        "name+country":  ["COMPANY", "COUNTRY"]
-      }
+      "ref_id": "company_id",
+      "ref_company": "company_name_clean",
+      "ref_original_company": "company_name",
+      "ref_country": "country_code_alpha2"
     }
   }
 }
