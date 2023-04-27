@@ -29,16 +29,12 @@
     },
 
     "matching_role": "referential",
+    "policy_name": "matching_with_corpwatch",
     "matching_alias": {
       "LEI": "lei",
-      "ISIN": "lei",
+      "PARENT_LEI": "lei",
       "COMPANY": "company_name_clean",
-      "COUNTRY": "country_code_alpha2",
-      "COUNTRY_HQ": "country_code_alpha2",
-      "COMPANY_OTHER_NAME1": "company_name_clean",
-      "COMPANY_OTHER_NAME2": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME1": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME2": "company_name_clean"
+      "COUNTRY": "country_code_alpha2"
     },
 
     "map_to_matching": {

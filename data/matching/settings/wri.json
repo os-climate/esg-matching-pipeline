@@ -22,12 +22,7 @@
     "matching_role": "target",
     "matching_alias": {
       "COMPANY": "company_name_clean",
-      "COUNTRY": "country_alpha2",
-      "COUNTRY_HQ": "country_alpha2",
-      "COMPANY_OTHER_NAME1": "company_name_clean",
-      "COMPANY_OTHER_NAME2": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME1": "company_name_clean",
-      "COMPANY_HQ_OTHER_NAME2": "company_name_clean"
+      "COUNTRY": "country_alpha2"
     },
     "map_to_matching": {
       "tgt_id": "company_id",
@@ -37,15 +32,19 @@
     }
   },
   "matching_policy": {
-    "matching_with_ref": {
+    "matching_with_gleif": {
       "dfm": {
         "name+country": ["COMPANY", "COUNTRY"]
-      },
+      }
+    },
+    "matching_with_wiki": {
       "drm": {
-        "other_name+country": ["COMPANY_OTHER_NAME1", "COUNTRY"],
-        "other_name+country": ["COMPANY_OTHER_NAME2", "COUNTRY"],
-        "other_name_hq+country": ["COMPANY_HQ_OTHER_NAME1", "COUNTRY_HQ"],
-        "other_name_hq+country": ["COMPANY_HQ_OTHER_NAME2", "COUNTRY_HQ"]
+        "name+country": ["COMPANY", "COUNTRY"]
+      }
+    },
+    "matching_with_corpwatch": {
+      "drm": {
+        "name+country": ["COMPANY", "COUNTRY"]
       },
       "irm": {
         "name+country": ["COMPANY", "COUNTRY"]

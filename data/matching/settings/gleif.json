@@ -32,9 +32,10 @@
       "name5_headq_clean": ["name5_headq_clean", "str"]
     },
     "matching_role": "referential",
+    "policy_name": "matching_with_gleif",
     "matching_alias": {
       "LEI": "lei",
-      "ISIN": "lei",
+      "PARENT_LEI": "lei",
       "COMPANY": "name_legal_clean",
       "COUNTRY": "legal_country_alpha2",
       "COUNTRY_HQ": "headquarter_country_alpha2",

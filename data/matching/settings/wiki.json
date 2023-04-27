@@ -30,15 +30,15 @@
       "alias_clean": ["alias_clean", "str"]
     },
     "matching_role": "referential",
+    "policy_name": "matching_with_wiki",
     "matching_alias": {
       "COMPANY": "company_name_clean",
       "COMPANY_OTHER_NAME1": "alias_clean",
       "COMPANY_OTHER_NAME2": "company_name_clean",
       "COMPANY_HQ_OTHER_NAME1": "alias_clean",
-      "COMPANY_HQ_OTHER_NAME2": "company_name_clean",
       "COUNTRY": "country_name_alpha2",
-      "COUNTRY_HQ": "country_name_alpha2",
       "LEI": "lei",
+      "PARENT_LEI": "lei",
       "PERM_ID": "perm_id",
       "BLOOMBERG_ID": "bloomberg_id",
       "ISIN": "isin",
